@@ -13,7 +13,7 @@ export default function Extracurriculars() {
       title: "Financial Analysis and Risk Management Association (FARMA) - Waterloo",
       role: "Quantitative Analyst",
       dates: "January 2026 - Present",
-      color: "cyan",
+      color: "purple",
       image: "/images/farmsa_logo.jpeg",
       icon: "F",  
       accomplishments: [
@@ -26,7 +26,7 @@ export default function Extracurriculars() {
       title: "Computer Science Club - University of Waterloo",
       role: "External Affairs Coordinator",
       dates: "January 2026 - Present",
-      color: "purple",
+      color: "cyan",
       image: "/images/csc-club.jpeg",
       icon: "B",
       accomplishments: [
@@ -39,7 +39,7 @@ export default function Extracurriculars() {
       title: "Student Admistrative Council - St.Augustine Catholic High School",
       role: "President",
       dates: "September 2024 - June 2025",
-      color: "pink",
+      color: "purple",
       image: "/images/sta-logo.jpeg",
       icon: "C",
       accomplishments: [
@@ -53,7 +53,7 @@ export default function Extracurriculars() {
       ]
     },
     {
-      title: "Buisness Leadership Classes/Council - St.Augustine Catholic High School",
+      title: "Business Leadership Council - St.Augustine Catholic High School",
       role: "Sponsorship Commitee Manager",
       dates: "January 2025 - June 2025",
       color: "cyan",
@@ -110,25 +110,25 @@ export default function Extracurriculars() {
 
   const colorMap = {
     cyan: { 
-      bg: "bg-cyan-400", 
-      border: "border-cyan-400", 
+      bg: "bg-cyan-500", 
+      border: "border-cyan-500", 
       text: "text-cyan-300", 
-      shadow: "shadow-cyan-400/50",
-      glow: "shadow-cyan-400/30"
+      shadow: "shadow-cyan-500/50",
+      glow: "shadow-cyan-500/30"
     },
     purple: { 
-      bg: "bg-purple-400", 
-      border: "border-purple-400", 
+      bg: "bg-purple-500", 
+      border: "border-purple-500", 
       text: "text-purple-300", 
-      shadow: "shadow-purple-400/50",
-      glow: "shadow-purple-400/30"
+      shadow: "shadow-purple-500/50",
+      glow: "shadow-purple-500/30"
     },
     pink: { 
-      bg: "bg-pink-400", 
-      border: "border-pink-400", 
+      bg: "bg-pink-500", 
+      border: "border-pink-500", 
       text: "text-pink-300", 
-      shadow: "shadow-pink-400/50",
-      glow: "shadow-pink-400/30"
+      shadow: "shadow-pink-500/50",
+      glow: "shadow-pink-500/30"
     }
   };
 
@@ -140,19 +140,19 @@ export default function Extracurriculars() {
   };
 
   return (
-    <section className="min-h-screen bg-slate-950 relative z-10">
+    <section className="min-h-screen relative md:sticky top-0 bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950" style={{zIndex: 50}}>
       {/* Header */}
-      <div className="sticky top-0 z-20 bg-black/60 backdrop-blur-lg border-b-2 border-cyan-400/30 py-6">
+      <div className="sticky top-0 z-20 bg-black/60 backdrop-blur-lg border-b-2 border-cyan-500/30 py-6">
         <div className="max-w-6xl mx-auto px-8">
-          <h2 className="text-4xl font-black text-white text-center mb-4 font-mono" style={{textShadow: '0 0 10px rgba(34, 211, 238, 0.5)'}}>
+          <h2 className="text-4xl font-bold text-white text-center mb-4 font-mono" style={{textShadow: '0 0 10px rgba(34, 211, 238, 0.5)'}}>
             EXTRACURRICULARS_&_LEADERSHIP
           </h2>
           
           {/* Blurb */}
           <p className="text-center text-white/80 text-lg max-w-4xl mx-auto mb-6 leading-relaxed">
             Feel free to scroll through a timeline of my efforts, from executing top financial projects as a quant analyst, 
-            to coordinating external affairs with companies like <span className="text-cyan-400 font-black">GOOGLE</span> and <span className="text-cyan-400 font-black">TESLA</span>, 
-            and even raising <span className="text-cyan-400 font-black">$45,000</span> for the SickKids Foundation. 
+            to coordinating external affairs with companies like <span className="text-cyan-500 font-bold">GOOGLE</span> and <span className="text-cyan-500 font-bold">TESLA</span>, 
+            and even raising <span className="text-cyan-500 font-bold">$45,000</span> for the SickKids Foundation. 
             See how I did it all! 
           </p>
 
@@ -179,7 +179,7 @@ export default function Extracurriculars() {
         <div className="max-w-6xl mx-auto px-8">
           <div className="relative">
             {/* Vertical Timeline Line */}
-            <div className="absolute left-12 top-0 bottom-0 w-1 bg-gradient-to-b from-cyan-400 via-purple-400 via-pink-400 to-cyan-400 opacity-30 rounded-full"></div>
+            <div className="absolute left-12 top-0 bottom-0 w-1 bg-gradient-to-b from-cyan-500 via-purple-400 via-pink-400 to-cyan-400 opacity-30 rounded-full"></div>
 
             <div className="space-y-[5vh]">
               {extracurriculars.map((item, index) => {
@@ -191,11 +191,11 @@ export default function Extracurriculars() {
                   <div
                     key={index}
                     ref={el => itemRefs.current[index] = el}
-                    className="relative flex items-center min-h-[35vh] pl-32"
+                    className="relative flex items-center min-h-[35vh] pl-20 md:pl-32"
                   >
                     {/* Timeline Dot */}
                     <div 
-                      className={`absolute left-8 w-10 h-10 ${colors.bg} rounded-full border-4 border-black transition-all duration-500 z-10 flex items-center justify-center ${
+                      className={`absolute left-4 md:left-8 w-8 h-8 md:w-10 md:h-10 ${colors.bg} rounded-full border-4 border-black transition-all duration-500 z-10 flex items-center justify-center ${
                         isFocused ? `scale-150 ${colors.shadow} shadow-2xl` : 'scale-100 opacity-50'
                       }`}
                     >
@@ -204,7 +204,7 @@ export default function Extracurriculars() {
 
                     {/* Connecting Line */}
                     <div 
-                      className={`absolute left-[52px] w-16 h-0.5 ${colors.bg} transition-all duration-500 ${
+                      className={`absolute left-[28px] md:left-[52px] w-16 h-0.5 ${colors.bg} transition-all duration-500 ${
                         isFocused ? 'opacity-100' : 'opacity-20'
                       }`}
                     ></div>
@@ -224,9 +224,9 @@ export default function Extracurriculars() {
                             : 'border-slate-700'
                         }`}
                       >
-                        <div className="p-8">
+                        <div className="p-5 md:p-8">
                           <div className="flex items-center gap-6 mb-6">
-                            <div className={`w-20 h-20 ${colors.bg} rounded-xl flex items-center justify-center shadow-xl transition-all duration-500 overflow-hidden border-2 border-white ${
+                            <div className={`w-14 h-14 md:w-20 md:h-20 ${colors.bg} rounded-xl flex items-center justify-center shadow-xl transition-all duration-500 overflow-hidden border-2 border-white ${
                                 isFocused ? 'scale-110' : ''
                               }`}>
                               {item.image ? (
@@ -236,20 +236,20 @@ export default function Extracurriculars() {
                                   className="w-full h-full object-cover"
                                 />
                               ) : (
-                                <span className="text-3xl font-black text-black">{item.icon}</span>
+                                <span className="text-3xl font-bold text-black">{item.icon}</span>
                               )}
                             </div>
                             <div className="flex-1">
-                              <h3 className="text-3xl font-black text-white mb-2">{item.title}</h3>
-                              <p className={`${colors.text} text-2xl font-bold`}>{item.role}</p>
-                              <p className="text-gray-400 text-base mt-1">{item.dates}</p>
+                              <h3 className="text-xl md:text-3xl font-bold text-white mb-2">{item.title}</h3>
+                              <p className={`${colors.text} text-sm md:text-lg md:text-2xl font-bold`}>{item.role}</p>
+                              <p className="text-gray-400 text-xs md:text-base mt-1">{item.dates}</p>
                             </div>
                           </div>
 
                           {isFocused && (
                             <button
                               onClick={() => setOpenIndex(isOpen ? null : index)}
-                              className={`w-full mt-4 px-6 py-3 rounded-xl ${colors.bg} text-black font-black hover:opacity-90 transition-all flex items-center justify-center gap-2 border-2 border-white`}
+                              className={`w-full mt-4 px-6 py-3 rounded-xl ${colors.bg} text-black font-bold hover:opacity-90 transition-all flex items-center justify-center gap-2 border-2 border-white`}
                             >
                               <span>{isOpen ? '[HIDE_DETAILS]' : '[VIEW_ACCOMPLISHMENTS]'}</span>
                               <svg
