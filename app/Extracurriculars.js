@@ -10,7 +10,7 @@ export default function Extracurriculars() {
 
   const extracurriculars = [
     {
-      title: "Financial Analysis and Risk Management Association (FARMA) - Waterloo",
+      title: "Financial Analysis and Risk Management Student Association (FARMSA) - Waterloo",
       role: "Quantitative Analyst",
       dates: "January 2026 - Present",
       color: "purple",
