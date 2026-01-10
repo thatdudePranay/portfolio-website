@@ -21,7 +21,7 @@ export default function Home() {
       id: 2,
       title: 'ALPHA-BL Portfolio Optimizer',
       color: 'purple',
-      description: 'A portfolio creation and optimization model, designed to maximize returns against a benchmark average of the S&P 500 and TSX. Powered by the financial metrics, Alpha, Beta, Sortino and Sharpe Ratios, and the Black-Litterman Optimization technique.',
+      description: 'A portfolio creation/optimization model, designed to maximize returns against the market. Core tools: Alpha, Beta, Sortino and Sharpe Ratios, and the Black-Litterman Optimization technique.',
       tech: ['Python', 'yfinance', 'Pandas'],
       link: 'https://github.com/aadya-khanna/ALPHA-BL'
     },
@@ -29,7 +29,7 @@ export default function Home() {
       id: 3,
       title: 'LoanOracle',
       color: 'pink',
-      description: 'An XGBoost powered machine learning model designed to predict loan default risk based on a borrower\'s financial data/profile. Trained on a dataset with 45,000+ data points, achieving a 0.52 Gini Score, 0.70 Avg F1 Score, and much more!',
+      description: 'A machine learning model designed to predict loan default risk. Trained on 45,000+ data points; 0.52 Gini Score, 0.70 Avg F1 Score, and much more!',
       tech: ['Python', 'XGBoost', 'Streamlit'],
       link: 'https://github.com/neilhaoyuan/credit_risk_loaner'
     },
@@ -37,7 +37,7 @@ export default function Home() {
       id: 4,
       title: 'EmotionLensAI',
       color: 'cyan',
-      description: 'A Tensorflow powered AI model designed to differentiate/classify 7 different human emotions. Trained on the FER-2013 dataset with over 35,000+ labeled images. Achieved a 93% accuracy on test sets, with a structured CNN, and data augmentation techniques.',
+      description: 'A Tensorflow powered AI model designed to differentiate/classify 7 different human emotions, with a structured CNN and data augmentation.',
       tech: ['Python', 'Tensorflow', 'matplotlib'],
       link: 'https://github.com/thatdudePranay/EmotionLensAI'
     },
@@ -45,7 +45,7 @@ export default function Home() {
       id: 5,
       title: 'GunSmashBros',
       color: 'purple',
-      description: 'A 2D PVP, Platformer-style shooting game. With inspiration drawn from the games Super Smash Bros and Gun Mayhem, real physics, map designs, gun types and more! Driven by Java Socket connections for real-time, multi device gameplay capabilities.',
+      description: 'A 2D PVP, Platformer-style shooting game. With multi device gamplay and inspiration drawn from Super Smash Bros.',
       tech: ['Java', 'Sockets'],
       link: 'https://github.com/tTong32/Gun-Smash-Bros'
     },
@@ -493,6 +493,7 @@ export default function Home() {
               <div className="mt-2 md:mt-3">
                 <div className="flex flex-wrap gap-2 mb-2 md:mb-3">
                   <span className="px-4 py-2 bg-purple-500/20 border border-purple-500 text-purple-300 rounded text-sm font-mono">Java</span>
+                  <span className="px-4 py-2 bg-purple-500/20 border border-purple-500 text-purple-300 rounded text-sm font-mono">OOP</span>
                   <span className="px-4 py-2 bg-purple-500/20 border border-purple-500 text-purple-300 rounded text-sm font-mono">Sockets</span>
                 </div>
                 <a 
