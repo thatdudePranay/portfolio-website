@@ -142,7 +142,7 @@ export default function Extracurriculars() {
   };
 
   return (
-    <section id="experiences" className="relative sticky top-0 bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 min-h-screen" style={{zIndex: 50}}>
+    <section id="experiences" className="relative sticky top-0 bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950" style={{zIndex: 50, minHeight: '100svh'}}>
       {/* Header */}
       <div className="sticky top-0 z-20 bg-black/60 backdrop-blur-lg border-b-2 border-cyan-500/30 py-4 md:py-6">
         <div className="max-w-6xl mx-auto px-4 md:px-8">
