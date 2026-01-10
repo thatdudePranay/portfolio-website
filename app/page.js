@@ -464,7 +464,7 @@ export default function Home() {
             <div className="bg-black/60 border-3 border-cyan-500 rounded-lg max-w-[360px] w-full mx-auto p-4 md:p-4 hover:border-cyan-300 hover:shadow-xl hover:shadow-cyan-500/30 transition-all duration-300">
               <h3 className="text-lg md:text-xl font-bold text-cyan-500 mb-2 md:mb-3">EmotionLensAI</h3>
               <p className="text-white/80 text-sm md:text-sm mb-2">
-                A Tensorflow powered AI model designed to differentiate/classify 7 different human emotions, with a structured CNN and data augmentation techniques.
+                A Tensorflow powered AI model designed to differentiate/classify 7 different human emotions, with a structured CNN and data augmentation.
               </p>
 
               <div className="mt-2 md:mt-3">
