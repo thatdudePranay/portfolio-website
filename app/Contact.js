@@ -13,7 +13,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="flex items-center justify-center px-4 py-16 md:py-20 relative sticky top-0 bg-black min-h-screen" style={{zIndex: 60}}>
+    <section id="contact" className="flex items-center justify-center px-4 py-16 md:py-20 relative md:sticky md:top-0 bg-black min-h-screen" style={{zIndex: 60}}>
       <div className="max-w-4xl w-full">
         <div className="text-center mb-8 md:mb-12">
           <h2 className="text-2xl md:text-6xl font-bold text-white mb-4 font-mono" style={{textShadow: '0 0 15px rgba(34, 211, 238, 0.5)'}}>
