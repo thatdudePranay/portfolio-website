@@ -660,7 +660,7 @@ export default function Home() {
       {/* Back to Top Button */}
       <button
         onClick={scrollToTop}
-        className={`fixed bottom-8 right-8 z-50 bg-gradient-to-r from-cyan-500 to-purple-500 text-white p-4 rounded-full shadow-2xl hover:shadow-cyan-500/50 transition-all duration-300 hover:scale-110 border-2 border-white ${
+        className={`fixed bottom-8 right-8 z-[100] bg-gradient-to-r from-cyan-500 to-purple-500 text-white p-4 rounded-full shadow-2xl hover:shadow-cyan-500/50 transition-all duration-300 hover:scale-110 border-2 border-white ${
           showBackToTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
         }`}
         aria-label="Back to top"

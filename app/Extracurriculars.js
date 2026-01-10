@@ -253,7 +253,7 @@ export default function Extracurriculars() {
                               onClick={() => setOpenIndex(isOpen ? null : index)}
                               className={`w-full mt-4 px-6 py-3 rounded-xl ${colors.bg} text-black font-bold hover:opacity-90 transition-all flex items-center justify-center gap-2 border-2 border-white`}
                             >
-                              <span>{isOpen ? '[HIDE_DETAILS]' : '[VIEW_ACCOMPLISHMENTS]'}</span>
+                              <span className="text-xs md:text-base">{isOpen ? '[HIDE_DETAILS]' : '[VIEW_ACCOMPLISHMENTS]'}</span>
                               <svg
                                 className={`w-5 h-5 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
                                 fill="none"
@@ -297,7 +297,7 @@ export default function Extracurriculars() {
         </div>
       </div>
 
-      <div className="h-[40vh]"></div>
+      <div className="h-[20vh] md:h-[40vh]"></div>
     </section>
   );
 }
