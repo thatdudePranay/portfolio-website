@@ -325,7 +325,7 @@ export default function Home() {
 
         {/* Scrollable content area - internal scroll on mobile, sticky on desktop */}
         <div className="flex-1 px-4 pb-12 md:pb-20">
-          <div className="w-full mx-auto" style={{maxWidth: '1600px'}}>
+          <div className="w-full mx-auto" style={{maxWidth: '1200px'}}>
             
             {/* MOBILE: Accordion View */}
             <div className="md:hidden space-y-4">
@@ -381,12 +381,12 @@ export default function Home() {
             </div>
 
             {/* DESKTOP: Grid View */}
-            <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-x-8 md:gap-y-4 mb-16 md:mb-32">
+            <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-x-6 md:gap-y-6 mb-12 md:mb-20 justify-center">
             
             {/* Project Card 1 */}
-            <div className="bg-black/60 border-3 border-cyan-500 rounded-lg p-5 md:p-5 hover:border-cyan-300 hover:shadow-xl hover:shadow-cyan-500/30 transition-all duration-300">
-              <h3 className="text-xl md:text-xl font-bold text-cyan-500 mb-2 md:mb-3">Portfolio Website</h3>
-              <p className="text-white/80 text-sm md:text-base mb-2 md:mb-3">
+            <div className="bg-black/60 border-3 border-cyan-500 rounded-lg max-w-[360px] w-full mx-auto p-4 md:p-4 hover:border-cyan-300 hover:shadow-xl hover:shadow-cyan-500/30 transition-all duration-300">
+              <h3 className="text-lg md:text-xl font-bold text-cyan-500 mb-2 md:mb-3">Portfolio Website</h3>
+              <p className="text-white/80 text-sm md:text-sm mb-2 md:mb-3">
                 A modern, responsive portfolio built with Next.js and Tailwind CSS. 
                 Features smooth animations and a clean design.
               </p>
@@ -408,13 +408,13 @@ export default function Home() {
             </div>
 
             {/* Project Card 2 */}
-            <div className="bg-black/60 border-3 border-purple-500 rounded-lg p-5 md:p-5 hover:border-purple-300 hover:shadow-xl hover:shadow-purple-500/30 transition-all duration-300">
-              <h3 className="text-xl md:text-xl font-bold text-purple-500 mb-2 md:mb-3">ALPHA-BL Portfolio Optimizer</h3>
-              <p className="text-white/80 text-sm md:text-base mb-2">
-                A portfolio creation/optimization model, designed to maximize returns against a benchmark average of the S&P 500 and TSX.
+            <div className="bg-black/60 border-3 border-purple-500 rounded-lg max-w-[360px] w-full mx-auto p-4 md:p-4 hover:border-purple-300 hover:shadow-xl hover:shadow-purple-500/30 transition-all duration-300">
+              <h3 className="text-lg md:text-xl font-bold text-purple-500 mb-2 md:mb-3">ALPHA-BL Portfolio Optimizer</h3>
+              <p className="text-white/80 text-sm md:text-sm mb-2">
+                A portfolio creation/optimization model, designed to maximize returns against the market.
               </p>
-              <p className="text-white/80 text-sm md:text-base mb-2 md:mb-3">
-                Powered by the financial metrics, Alpha, Beta, Sortino and Sharpe Ratios, and the Black-Litterman Optimization technique.
+              <p className="text-white/80 text-sm md:text-sm mb-2 md:mb-3">
+                Core tools: Alpha, Beta, Sortino and Sharpe Ratios, and the Black-Litterman Optimization technique.
               </p>
               <div className="mt-2 md:mt-3">
                 <div className="flex flex-wrap gap-2 mb-2 md:mb-3">
@@ -434,14 +434,14 @@ export default function Home() {
             </div>
 
             {/* Project Card 3 */}
-            <div className="bg-black/60 border-3 border-pink-500 rounded-lg p-5 md:p-5 hover:border-pink-300 hover:shadow-xl hover:shadow-pink-500/30 transition-all duration-300">
-              <h3 className="text-xl md:text-xl font-bold text-pink-500 mb-2 md:mb-3">LoanOracle</h3>
-              <p className="text-white/80 text-sm md:text-base mb-2">
-                An XGBoost powered machine learning model designed to predict loan default risk
+            <div className="bg-black/60 border-3 border-pink-500 rounded-lg max-w-[360px] w-full mx-auto p-4 md:p-4 hover:border-pink-300 hover:shadow-xl hover:shadow-pink-500/30 transition-all duration-300">
+              <h3 className="text-lg md:text-xl font-bold text-pink-500 mb-2 md:mb-3">LoanOracle</h3>
+              <p className="text-white/80 text-sm md:text-sm mb-2">
+                A machine learning model designed to predict loan default risk
                 based on a borrower's financial data/profile. 
               </p>
-              <p className="text-white/80 text-sm md:text-base mb-2 md:mb-3">
-                Trained on a dataset with 45,000+ data points, achieving a 0.52 Gini Score, 0.70 Avg F1 Score, and much more!
+              <p className="text-white/80 text-sm md:text-sm mb-2 md:mb-3">
+                Trained on 45,000+ data points; 0.52 Gini Score, 0.70 Avg F1 Score, and much more!
               </p>
               <div className="mt-2 md:mt-3">
                 <div className="flex flex-wrap gap-2 mb-2 md:mb-3">
@@ -461,15 +461,12 @@ export default function Home() {
             </div>
 
             {/* Project Card 4 */}
-            <div className="bg-black/60 border-3 border-cyan-500 rounded-lg p-5 md:p-5 hover:border-cyan-300 hover:shadow-xl hover:shadow-cyan-500/30 transition-all duration-300">
-              <h3 className="text-xl md:text-xl font-bold text-cyan-500 mb-2 md:mb-3">EmotionLensAI</h3>
-              <p className="text-white/80 text-sm md:text-base mb-2">
-                A Tensorflow powered AI model designed to differentiate/classify 7 different human emotions.
-                trained on the FER-2013 dataset with over 35,000+ labeled images.
+            <div className="bg-black/60 border-3 border-cyan-500 rounded-lg max-w-[360px] w-full mx-auto p-4 md:p-4 hover:border-cyan-300 hover:shadow-xl hover:shadow-cyan-500/30 transition-all duration-300">
+              <h3 className="text-lg md:text-xl font-bold text-cyan-500 mb-2 md:mb-3">EmotionLensAI</h3>
+              <p className="text-white/80 text-sm md:text-sm mb-2">
+                A Tensorflow powered AI model designed to differentiate/classify 7 different human emotions, with a structured CNN and data augmentation techniques.
               </p>
-              <p className="text-white/80 text-sm md:text-base mb-2 md:mb-3">
-                Achieved a 93% accuracy on test sets, with a structured CNN, and data augmentation techniques.
-              </p> 
+
               <div className="mt-2 md:mt-3">
                 <div className="flex flex-wrap gap-2 mb-2 md:mb-3">
                   <span className="px-4 py-2 bg-cyan-500/20 border border-cyan-500 text-cyan-300 rounded text-sm font-mono">Python</span>
@@ -488,12 +485,12 @@ export default function Home() {
             </div>
 
             {/* Project Card 5 */}
-            <div className="bg-black/60 border-3 border-purple-500 rounded-lg p-5 md:p-5 hover:border-purple-300 hover:shadow-xl hover:shadow-purple-500/30 transition-all duration-300">
-              <h3 className="text-xl md:text-xl font-bold text-purple-500 mb-2 md:mb-3">GunSmashBros</h3>
-              <p className="text-white/80 text-sm md:text-base mb-2">
-                A 2D PVP, Platformer-style shooting game. With inspiration drawn from the games Super Smash Bros and Gun Mayhem, real physics, map designs, gun types and more!
+            <div className="bg-black/60 border-3 border-purple-500 rounded-lg max-w-[360px] w-full mx-auto p-4 md:p-4 hover:border-purple-300 hover:shadow-xl hover:shadow-purple-500/30 transition-all duration-300">
+              <h3 className="text-lg md:text-xl font-bold text-purple-500 mb-2 md:mb-3">GunSmashBros</h3>
+              <p className="text-white/80 text-sm md:text-sm mb-2">
+                A 2D PVP, Platformer-style shooting game. With inspiration drawn from the games Super Smash Bros and Gun Mayhem.
               </p>
-              <p className="text-white/80 text-sm md:text-base mb-2 md:mb-3">
+              <p className="text-white/80 text-sm md:text-sm mb-2 md:mb-3">
                 Driven by Java Socket connections for real-time, multi device gameplay capabilities.
               </p>
               <div className="mt-2 md:mt-3">
@@ -513,9 +510,9 @@ export default function Home() {
             </div>
 
             {/* Project Card 6 */}
-            <div className="bg-black/60 border-3 border-pink-500 rounded-lg p-5 md:p-5 hover:border-pink-300 hover:shadow-xl hover:shadow-pink-500/30 transition-all duration-300">
-              <h3 className="text-xl md:text-xl font-bold text-pink-500 mb-2 md:mb-3">Potential next project??</h3>
-              <p className="text-white/80 text-sm md:text-base mb-2 md:mb-3">
+            <div className="bg-black/60 border-3 border-pink-500 rounded-lg max-w-[360px] w-full mx-auto p-4 md:p-4 hover:border-pink-300 hover:shadow-xl hover:shadow-pink-500/30 transition-all duration-300">
+              <h3 className="text-lg md:text-xl font-bold text-pink-500 mb-2 md:mb-3">Potential next project??</h3>
+              <p className="text-white/80 text-sm md:text-sm mb-2 md:mb-3">
                 Stay tuned for any future progress, updates, or new projects that I may be working on!
               </p>
               <p className="text-white/80 text-sm md:text-base mb-2 md:mb-3">
