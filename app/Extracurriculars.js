@@ -18,7 +18,9 @@ export default function Extracurriculars() {
       icon: "F",  
       accomplishments: [
         "Analyzed precious metals spreads against consumer inflation expectations using Python (yfinance, FRED API) to identify trading signals with 11.8% copper outperformance",
-        "Will be developing strong market analytical, financial and risk management models within the tenure of the role",
+        "Conducted SABR Volatility Model research, exploring volatility surface concepts effects on options",
+        "Implemented a functioning, calibrated SABR model, to make accurate option volatility readings, and valuations",
+        "Will be working on reverse engineering MVO portfolio optimization methods, to analyze functionality, reasoning, etc",
         "Progress ongoing..."
       ]
     },
@@ -44,9 +46,8 @@ export default function Extracurriculars() {
       icon: "C",
       accomplishments: [
         "Led a 30+ member team and directed logistics for 20+ school-wide events including Games Nights, School Carnivals and more",
-        "Ensure careful team management, task delegation, and effective communication to maximize productivity and event success",
+        "Ensured careful team management, task delegation, and effective communication to maximize productivity and event success",
         "Oversaw the financial organization of over $35,000 in revenue for an annual Semi-Formal Event",
-        "Introduced a data-driven feedback collection initiative which revamped student interest",
         "Managed internal and external communications, liaising with school administration, local community partners, and other clubs, councils, and committeees within the school",
         "Carried out 5+ major speeches to audiences of 200+ students and faculty",
         "2021-2022; Grade 9 Representative, 2022-2023; Treasurer, 2023-2024; Grade 11 Representative"
@@ -60,14 +61,15 @@ export default function Extracurriculars() {
       image: "/images/sta-logo.jpeg",
       icon: "C",
       accomplishments: [
-        "Led a Sponsorship Committee, and worked with the complete team, to raise $45,000 for the SickKids Foundation for a major business casual style dinner event, for over 300 attendees",
+        "Led a Sponsorship Committee, and worked with the complete team, to raise $43,000 for the SickKids Foundation, through the creation of a major business-casual, style dinner event hosted for over 300+ attendees",
+        "Oversaw logistical management of core event functionalities, including a silent auction, event schedule, guest speakers and more.",
         "Secured sponsorships from top firms like Qualcomm, Starbucks, and TD Bank through strategic outreach",
         "Organized a Silent Auction with high-value prizes, including signed sports memorabilia, TVs, luxury goods and more. All which contributed $10,000+ to the total"
       ]
     },
     {
       title: "Robotics Camp - City of Markham",
-      role: "Robotics Camp Counselor",
+      role: "Camp Counselor",
       dates: "July 2024 - August 2024",
       color: "purple",
       image: "/images/city-of-markham.jpeg",
@@ -150,7 +152,7 @@ export default function Extracurriculars() {
           
           {/* Blurb */}
           <p className="text-center text-white/80 text-sm md:text-lg max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">
-            Feel free to scroll through a timeline of my efforts, from executing top financial projects as a quant analyst, 
+            Feel free to scroll through a timeline of some of my notable extracurriculars/involvements! From executing top financial projects as a Quantitative Analyst, 
             to coordinating external affairs with companies like <span className="text-cyan-500 font-bold">GOOGLE</span> and <span className="text-cyan-500 font-bold">TESLA</span>, 
             and even raising <span className="text-cyan-500 font-bold">$45,000</span> for the SickKids Foundation. 
             See how I did it all! 
@@ -240,8 +242,8 @@ export default function Extracurriculars() {
                               )}
                             </div>
                             <div className="flex-1">
-                              <h3 className="text-xl md:text-3xl font-bold text-white mb-2">{item.title}</h3>
-                              <p className={`${colors.text} text-sm md:text-lg md:text-2xl font-bold`}>{item.role}</p>
+                              <h3 className="text-xl md:text-2xl font-bold text-white mb-2">{item.title}</h3>
+                              <p className={`${colors.text} text-base md:text-2xl font-bold`}>{item.role}</p>
                               <p className="text-gray-400 text-xs md:text-base mt-1">{item.dates}</p>
                             </div>
                           </div>

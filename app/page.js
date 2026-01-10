@@ -1,9 +1,106 @@
 "use client";
 
+import { useState, useEffect } from 'react';
 import Extracurriculars from './Extracurriculars';
 import Contact from './Contact';
 
 export default function Home() {
+  const [expandedProject, setExpandedProject] = useState(null);
+  const [showBackToTop, setShowBackToTop] = useState(false);
+
+  const projects = [
+    {
+      id: 1,
+      title: 'Portfolio Website',
+      color: 'cyan',
+      description: 'A modern, responsive portfolio built with Next.js and Tailwind CSS. Features smooth animations and a clean design.',
+      tech: ['Next.js', 'React', 'Tailwind'],
+      link: 'https://github.com/thatdudePranay/portfolio-website'
+    },
+    {
+      id: 2,
+      title: 'ALPHA-BL Portfolio Optimizer',
+      color: 'purple',
+      description: 'A portfolio creation and optimization model, designed to maximize returns against a benchmark average of the S&P 500 and TSX. Powered by the financial metrics, Alpha, Beta, Sortino and Sharpe Ratios, and the Black-Litterman Optimization technique.',
+      tech: ['Python', 'yfinance', 'Pandas'],
+      link: 'https://github.com/aadya-khanna/ALPHA-BL'
+    },
+    {
+      id: 3,
+      title: 'LoanOracle',
+      color: 'pink',
+      description: 'An XGBoost powered machine learning model designed to predict loan default risk based on a borrower\'s financial data/profile. Trained on a dataset with 45,000+ data points, achieving a 0.52 Gini Score, 0.70 Avg F1 Score, and much more!',
+      tech: ['Python', 'XGBoost', 'Streamlit'],
+      link: 'https://github.com/neilhaoyuan/credit_risk_loaner'
+    },
+    {
+      id: 4,
+      title: 'EmotionLensAI',
+      color: 'cyan',
+      description: 'A Tensorflow powered AI model designed to differentiate/classify 7 different human emotions. Trained on the FER-2013 dataset with over 35,000+ labeled images. Achieved a 93% accuracy on test sets, with a structured CNN, and data augmentation techniques.',
+      tech: ['Python', 'Tensorflow', 'matplotlib'],
+      link: 'https://github.com/thatdudePranay/EmotionLensAI'
+    },
+    {
+      id: 5,
+      title: 'GunSmashBros',
+      color: 'purple',
+      description: 'A 2D PVP, Platformer-style shooting game. With inspiration drawn from the games Super Smash Bros and Gun Mayhem, real physics, map designs, gun types and more! Driven by Java Socket connections for real-time, multi device gameplay capabilities.',
+      tech: ['Java', 'Sockets'],
+      link: 'https://github.com/tTong32/Gun-Smash-Bros'
+    },
+    {
+      id: 6,
+      title: 'Potential next project??',
+      color: 'pink',
+      description: 'Stay tuned for any future progress, updates, or new projects that I may be working on! Loading...',
+      tech: ['...', '...', '...'],
+      link: '#'
+    }
+  ];
+
+  const getColorClasses = (color) => {
+    const colors = {
+      cyan: {
+        border: 'border-cyan-500',
+        text: 'text-cyan-500',
+        bg: 'bg-cyan-500/20',
+        hoverBorder: 'hover:border-cyan-300'
+      },
+      purple: {
+        border: 'border-purple-500',
+        text: 'text-purple-500',
+        bg: 'bg-purple-500/20',
+        hoverBorder: 'hover:border-purple-300'
+      },
+      pink: {
+        border: 'border-pink-500',
+        text: 'text-pink-500',
+        bg: 'bg-pink-500/20',
+        hoverBorder: 'hover:border-pink-300'
+      }
+    };
+    return colors[color];
+  };
+
+  // Back to Top functionality
+  useEffect(() => {
+    const handleScroll = () => {
+      // Show button after scrolling down 500px
+      setShowBackToTop(window.scrollY > 500);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <main className="relative">
       {/* Global Retro Background Elements - EXTENDS TO END */}
@@ -139,13 +236,15 @@ export default function Home() {
                 key={item.num}
                 href={`#${item.target}`}
                 onClick={(e) => {
-                 e.preventDefault();
+                e.preventDefault();
                   document.getElementById(item.target)?.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
                   });
                 }}
-                className="group bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 rounded-2xl p-4 md:p-6 transition-all hover:-translate-y-1"
+                className={`group bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 rounded-2xl p-4 md:p-6 transition-all hover:-translate-y-1 ${
+                  item.num === '05' ? 'col-span-2 justify-self-center w-1/2 md:col-span-1 md:w-auto md:justify-self-auto' : ''
+                }`}
               >
                 <p className="text-white/50 text-xs md:text-sm mb-1 md:mb-2">{item.num}</p>
                 <p className="text-white font-bold text-base md:text-lg">{item.label}</p>
@@ -186,7 +285,7 @@ export default function Home() {
                   <img 
                     src="/images/niceheadshot.jpg" 
                     alt="Pranay Subramanian"
-                    className="w-full h-auto max-h-[30vh] md:max-h-none object-cover"
+                    className="w-full h-auto max-h-[25vh] md:max-h-none object-cover"
 
                   />
                   {/* Retro scan line effect on hover */}
@@ -215,156 +314,246 @@ export default function Home() {
         </div>
       </section>
 
-{/* Projects Section - PURPLE RETRO BACKGROUND VISIBLE */}
-      <section id="projects"className="flex items-start justify-center px-4 py-12 md:pt-32 md:pb-20 relative md:sticky top-0 bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 md:min-h-screen" style={{zIndex: 30}}>
-        <div className="w-full" style={{maxWidth: '1600px'}}>
-          <h2 className="text-2xl md:text-6xl font-bold text-white mb-6 md:mb-12 text-center" style={{textShadow: '0 0 15px rgba(34, 211, 238, 0.3)'}}>
+{/* Projects Section - PURPLE RETRO BACKGROUND VISIBLE - WITH INTERNAL SCROLLING */}
+      <section id="projects" className="sticky top-0 md:sticky bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 min-h-screen flex flex-col" style={{zIndex: 30}} >
+        {/* Header - Fixed at top */}
+        <div className="pt-12 md:pt-16 px-4 flex-shrink-0">
+          <h2 className="text-2xl md:text-5xl font-bold text-white mb-4 md:mb-6 text-center" style={{textShadow: '0 0 15px rgba(34, 211, 238, 0.3)'}}>
             PROJECTS
           </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-x-12 md:gap-y-10">
+        </div>
+
+        {/* Scrollable content area - internal scroll on mobile, sticky on desktop */}
+        <div className="flex-1 px-4 pb-12 md:pb-20">
+          <div className="w-full mx-auto" style={{maxWidth: '1600px'}}>
+            
+            {/* MOBILE: Accordion View */}
+            <div className="md:hidden space-y-4">
+              {projects.map((project) => {
+                const colors = getColorClasses(project.color);
+                const isExpanded = expandedProject === project.id;
+                return (
+                  <div key={project.id} className={`border-3 ${colors.border} rounded-lg overflow-hidden transition-all duration-300`}>
+                    <button
+                      onClick={() => setExpandedProject(isExpanded ? null : project.id)}
+                      className={`w-full px-4 py-4 bg-black/40 hover:opacity-80 transition-all duration-300 flex items-center justify-between border-b-2 ${colors.border}`}
+                    >
+                      <h3 className={`${colors.text} font-bold text-left`}>{project.title}</h3>
+                      <span className={`${colors.text} text-xl transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}>
+                        ▼
+                      </span>
+                    </button>
+                    
+                    <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isExpanded ? 'max-h-96' : 'max-h-0'}`}>
+                      <div className="bg-black/60 border-t-3 border-inherit p-4 space-y-3">
+                        {project.description.split('. ').filter(Boolean).map((sentence, idx) => (
+                          <p key={idx} className="text-white/80 text-sm leading-relaxed">
+                            {sentence}{idx < project.description.split('. ').filter(Boolean).length - 1 ? '.' : ''}
+                          </p>
+                        ))}
+                        <div className="flex flex-wrap gap-2">
+                          {project.tech.map((tech, idx) => (
+                            <span key={idx} className={`px-3 py-1 ${colors.bg} border ${colors.border} ${colors.text} rounded text-xs font-mono`}>
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                        {project.link !== '#' && (
+                          <a
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`inline-block ${colors.text} hover:opacity-70 transition-opacity font-bold`}
+                          >
+                            [VIEW_PROJECT] →
+                          </a>
+                        )}
+                        {project.link === '#' && (
+                          <span className={`inline-block ${colors.text} opacity-50 font-bold cursor-not-allowed`}>
+                            [COMING_SOON] →
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* DESKTOP: Grid View */}
+            <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-x-8 md:gap-y-4 mb-16 md:mb-32">
             
             {/* Project Card 1 */}
-            <div className="bg-black/60 border-3 border-cyan-500 rounded-lg p-5 md:p-8 hover:border-cyan-300 hover:shadow-xl hover:shadow-cyan-500/30 transition-all duration-300">
-              <h3 className="text-xl md:text-2xl font-bold text-cyan-500 mb-3">Portfolio Website</h3>
-              <p className="text-white/80 text-sm md:text-base mb-3">
+            <div className="bg-black/60 border-3 border-cyan-500 rounded-lg p-5 md:p-5 hover:border-cyan-300 hover:shadow-xl hover:shadow-cyan-500/30 transition-all duration-300">
+              <h3 className="text-xl md:text-xl font-bold text-cyan-500 mb-2 md:mb-3">Portfolio Website</h3>
+              <p className="text-white/80 text-sm md:text-base mb-2 md:mb-3">
                 A modern, responsive portfolio built with Next.js and Tailwind CSS. 
                 Features smooth animations and a clean design.
               </p>
-              <div className="mt-4">
-                <div className="flex flex-wrap gap-2 mb-3">
+              <div className="mt-3 md:mt-4">
+                <div className="flex flex-wrap gap-2 mb-2 md:mb-3">
                   <span className="px-4 py-2 bg-cyan-500/20 border border-cyan-500 text-cyan-300 rounded text-sm font-mono">Next.js</span>
                   <span className="px-4 py-2 bg-cyan-500/20 border border-cyan-500 text-cyan-300 rounded text-sm font-mono">React</span>
                   <span className="px-4 py-2 bg-cyan-500/20 border border-cyan-500 text-cyan-300 rounded text-sm font-mono">Tailwind</span>
                 </div>
-                <a href="#" className="text-cyan-500 hover:text-cyan-300 transition-colors font-bold">
+                <a 
+                  href="https://github.com/thatdudePranay/portfolio-website" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-cyan-500 hover:text-cyan-300 transition-colors font-bold"
+                >
                   [VIEW_PROJECT] →
                 </a>
               </div>
             </div>
 
             {/* Project Card 2 */}
-            <div className="bg-black/60 border-3 border-purple-500 rounded-lg p-5 md:p-8 hover:border-purple-300 hover:shadow-xl hover:shadow-purple-500/30 transition-all duration-300">
-              <h3 className="text-xl md:text-2xl font-bold text-purple-500 mb-3">ALPHA-BL Portfolio Optimizer</h3>
+            <div className="bg-black/60 border-3 border-purple-500 rounded-lg p-5 md:p-5 hover:border-purple-300 hover:shadow-xl hover:shadow-purple-500/30 transition-all duration-300">
+              <h3 className="text-xl md:text-xl font-bold text-purple-500 mb-2 md:mb-3">ALPHA-BL Portfolio Optimizer</h3>
               <p className="text-white/80 text-sm md:text-base mb-2">
-                A portfolio creation and optimization model, designed to maximize returns against a benchmark average of the S&P 500 and TSX.
+                A portfolio creation/optimization model, designed to maximize returns against a benchmark average of the S&P 500 and TSX.
               </p>
-              <p className="text-white/80 text-sm md:text-base mb-3">
+              <p className="text-white/80 text-sm md:text-base mb-2 md:mb-3">
                 Powered by the financial metrics, Alpha, Beta, Sortino and Sharpe Ratios, and the Black-Litterman Optimization technique.
               </p>
-              <div className="mt-3">
-                <div className="flex flex-wrap gap-2 mb-3">
+              <div className="mt-2 md:mt-3">
+                <div className="flex flex-wrap gap-2 mb-2 md:mb-3">
                   <span className="px-4 py-2 bg-purple-500/20 border border-purple-500 text-purple-300 rounded text-sm font-mono">Python</span>
                   <span className="px-4 py-2 bg-purple-500/20 border border-purple-500 text-purple-300 rounded text-sm font-mono">yfinance</span>
                   <span className="px-4 py-2 bg-purple-500/20 border border-purple-500 text-purple-300 rounded text-sm font-mono">Pandas</span>
                 </div>
-                <a href="#" className="text-purple-500 hover:text-purple-300 transition-colors font-bold">
+                <a 
+                  href="https://github.com/aadya-khanna/ALPHA-BL"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-purple-500 hover:text-purple-300 transition-colors font-bold"
+                >
                   [VIEW_PROJECT] →
                 </a>
               </div>
             </div>
 
             {/* Project Card 3 */}
-            <div className="bg-black/60 border-3 border-pink-500 rounded-lg p-5 md:p-8 hover:border-pink-300 hover:shadow-xl hover:shadow-pink-500/30 transition-all duration-300">
-              <h3 className="text-xl md:text-2xl font-bold text-pink-500 mb-3">LoanOracle</h3>
+            <div className="bg-black/60 border-3 border-pink-500 rounded-lg p-5 md:p-5 hover:border-pink-300 hover:shadow-xl hover:shadow-pink-500/30 transition-all duration-300">
+              <h3 className="text-xl md:text-xl font-bold text-pink-500 mb-2 md:mb-3">LoanOracle</h3>
               <p className="text-white/80 text-sm md:text-base mb-2">
                 An XGBoost powered machine learning model designed to predict loan default risk
                 based on a borrower's financial data/profile. 
               </p>
-              <p className="text-white/80 text-sm md:text-base mb-3">
+              <p className="text-white/80 text-sm md:text-base mb-2 md:mb-3">
                 Trained on a dataset with 45,000+ data points, achieving a 0.52 Gini Score, 0.70 Avg F1 Score, and much more!
               </p>
-              <div className="mt-3">
-                <div className="flex flex-wrap gap-2 mb-3">
+              <div className="mt-2 md:mt-3">
+                <div className="flex flex-wrap gap-2 mb-2 md:mb-3">
                   <span className="px-4 py-2 bg-pink-500/20 border border-pink-500 text-pink-300 rounded text-sm font-mono">Python</span>
                   <span className="px-4 py-2 bg-pink-500/20 border border-pink-500 text-pink-300 rounded text-sm font-mono">XGBoost</span>
                   <span className="px-4 py-2 bg-pink-500/20 border border-pink-500 text-pink-300 rounded text-sm font-mono">Streamlit</span>
                 </div>
-                <a href="#" className="text-pink-500 hover:text-pink-300 transition-colors font-bold">
+                <a 
+                  href="https://github.com/neilhaoyuan/credit_risk_loaner" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-pink-500 hover:text-pink-300 transition-colors font-bold"
+                >
                   [VIEW_PROJECT] →
                 </a>
               </div>
             </div>
 
             {/* Project Card 4 */}
-            <div className="bg-black/60 border-3 border-cyan-500 rounded-lg p-5 md:p-8 hover:border-cyan-300 hover:shadow-xl hover:shadow-cyan-500/30 transition-all duration-300">
-              <h3 className="text-xl md:text-2xl font-bold text-cyan-500 mb-3">EmotionLensAI</h3>
+            <div className="bg-black/60 border-3 border-cyan-500 rounded-lg p-5 md:p-5 hover:border-cyan-300 hover:shadow-xl hover:shadow-cyan-500/30 transition-all duration-300">
+              <h3 className="text-xl md:text-xl font-bold text-cyan-500 mb-2 md:mb-3">EmotionLensAI</h3>
               <p className="text-white/80 text-sm md:text-base mb-2">
                 A Tensorflow powered AI model designed to differentiate/classify 7 different human emotions.
                 trained on the FER-2013 dataset with over 35,000+ labeled images.
               </p>
-              <p className="text-white/80 text-sm md:text-base mb-3">
+              <p className="text-white/80 text-sm md:text-base mb-2 md:mb-3">
                 Achieved a 93% accuracy on test sets, with a structured CNN, and data augmentation techniques.
               </p> 
-              <div className="mt-3">
-                <div className="flex flex-wrap gap-2 mb-3">
+              <div className="mt-2 md:mt-3">
+                <div className="flex flex-wrap gap-2 mb-2 md:mb-3">
                   <span className="px-4 py-2 bg-cyan-500/20 border border-cyan-500 text-cyan-300 rounded text-sm font-mono">Python</span>
                   <span className="px-4 py-2 bg-cyan-500/20 border border-cyan-500 text-cyan-300 rounded text-sm font-mono">Tensorflow</span>
                   <span className="px-4 py-2 bg-cyan-500/20 border border-cyan-500 text-cyan-300 rounded text-sm font-mono">matplotlib</span>
                 </div>
-                <a href="#" className="text-cyan-500 hover:text-cyan-300 transition-colors font-bold">
+                <a 
+                  href="https://github.com/thatdudePranay/EmotionLensAI" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-cyan-500 hover:text-cyan-300 transition-colors font-bold"
+                >
                   [VIEW_PROJECT] →
                 </a>
               </div>
             </div>
 
             {/* Project Card 5 */}
-            <div className="bg-black/60 border-3 border-purple-500 rounded-lg p-5 md:p-8 hover:border-purple-300 hover:shadow-xl hover:shadow-purple-500/30 transition-all duration-300">
-              <h3 className="text-xl md:text-2xl font-bold text-purple-500 mb-3">GunSmashBros</h3>
+            <div className="bg-black/60 border-3 border-purple-500 rounded-lg p-5 md:p-5 hover:border-purple-300 hover:shadow-xl hover:shadow-purple-500/30 transition-all duration-300">
+              <h3 className="text-xl md:text-xl font-bold text-purple-500 mb-2 md:mb-3">GunSmashBros</h3>
               <p className="text-white/80 text-sm md:text-base mb-2">
                 A 2D PVP, Platformer-style shooting game. With inspiration drawn from the games Super Smash Bros and Gun Mayhem, real physics, map designs, gun types and more!
               </p>
-              <p className="text-white/80 text-sm md:text-base mb-3">
+              <p className="text-white/80 text-sm md:text-base mb-2 md:mb-3">
                 Driven by Java Socket connections for real-time, multi device gameplay capabilities.
               </p>
-              <div className="mt-3">
-                <div className="flex flex-wrap gap-2 mb-3">
+              <div className="mt-2 md:mt-3">
+                <div className="flex flex-wrap gap-2 mb-2 md:mb-3">
                   <span className="px-4 py-2 bg-purple-500/20 border border-purple-500 text-purple-300 rounded text-sm font-mono">Java</span>
                   <span className="px-4 py-2 bg-purple-500/20 border border-purple-500 text-purple-300 rounded text-sm font-mono">Sockets</span>
                 </div>
-                <a href="#" className="text-purple-500 hover:text-purple-300 transition-colors font-bold">
+                <a 
+                  href="https://github.com/tTong32/Gun-Smash-Bros" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-purple-500 hover:text-purple-300 transition-colors font-bold"
+                >
                   [VIEW_PROJECT] →
                 </a>
               </div>
             </div>
 
             {/* Project Card 6 */}
-            <div className="bg-black/60 border-3 border-pink-500 rounded-lg p-5 md:p-8 hover:border-pink-300 hover:shadow-xl hover:shadow-pink-500/30 transition-all duration-300">
-              <h3 className="text-xl md:text-2xl font-bold text-pink-500 mb-3">Potential next project??</h3>
-              <p className="text-white/80 text-sm md:text-base mb-3">
+            <div className="bg-black/60 border-3 border-pink-500 rounded-lg p-5 md:p-5 hover:border-pink-300 hover:shadow-xl hover:shadow-pink-500/30 transition-all duration-300">
+              <h3 className="text-xl md:text-xl font-bold text-pink-500 mb-2 md:mb-3">Potential next project??</h3>
+              <p className="text-white/80 text-sm md:text-base mb-2 md:mb-3">
                 Stay tuned for any future progress, updates, or new projects that I may be working on!
               </p>
-              <p className="text-white/80 text-sm md:text-base mb-3">
+              <p className="text-white/80 text-sm md:text-base mb-2 md:mb-3">
                 Loading...
               </p>
-              <div className="mt-4">
-                <div className="flex flex-wrap gap-2 mb-3">
+              <div className="mt-3 md:mt-4">
+                <div className="flex flex-wrap gap-2 mb-2 md:mb-3">
                   <span className="px-4 py-2 bg-pink-500/20 border border-pink-500 text-pink-300 rounded text-sm font-mono">...</span>
                   <span className="px-4 py-2 bg-pink-500/20 border border-pink-500 text-pink-300 rounded text-sm font-mono">...</span>
                   <span className="px-4 py-2 bg-pink-500/20 border border-pink-500 text-pink-300 rounded text-sm font-mono">...</span>
                 </div>
-                <a href="#" className="text-pink-500 hover:text-pink-300 transition-colors font-bold">
-                  [VIEW_PROJECT] →
+                <a 
+                  href="#" 
+                  onClick={(e) => e.preventDefault()}
+                  className="text-pink-500 hover:text-pink-300 transition-colors font-bold cursor-not-allowed opacity-50"
+                >
+                  [COMING_SOON] →
                 </a>
               </div>
             </div>
 
+            </div>
           </div>
-          </div>
+        </div>
       </section>
 
       {/* Skills Section - BLACK LAYER */}
       <section id="skills" className="flex items-center justify-center px-4 md:px-16 py-16 md:py-20 relative sticky top-0 bg-black min-h-screen" style={{zIndex: 40}}>
         <div className="max-w-6xl w-full">
           <h2 className="text-2xl md:text-6xl font-bold text-white mb-8 md:mb-12 text-center" style={{textShadow: '0 0 15px rgba(34, 211, 238, 0.3)'}}>
-            TECHNICAL_SKILLS
+            TECHNICAL SKILLS
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             
             {/* Programming Languages */}
             <div className="bg-black border-4 border-cyan-500 rounded-lg p-4 font-mono">
-              <h3 className="text-lg font-bold text-cyan-500 mb-2">PROGRAMMING_LANGUAGES</h3>
+              <h3 className="text-lg font-bold text-cyan-500 mb-2">PROGRAMMING LANGUAGES</h3>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-cyan-500 rounded-full"></div>
@@ -387,7 +576,7 @@ export default function Home() {
 
             {/* Frameworks & Libraries */}
             <div className="bg-black border-4 border-purple-500 rounded-lg p-4 font-mono">
-              <h3 className="text-lg font-bold text-purple-500 mb-2">FRAMEWORKS_&_TOOLS</h3>
+              <h3 className="text-lg font-bold text-purple-500 mb-2">CORE FRAMEWORKS & TOOLS</h3>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
@@ -414,30 +603,30 @@ export default function Home() {
 
             {/* Technical Focus Areas */}
             <div className="bg-black border-4 border-pink-500 rounded-lg p-4 font-mono">
-              <h3 className="text-lg font-bold text-pink-500 mb-2">TECHNICAL_FOCUS</h3>
+              <h3 className="text-lg font-bold text-pink-500 mb-2">TECHNICAL FOCUS</h3>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-pink-500 rounded-full"></div>
-                  <span className="text-white">MACHINE_LEARNING</span>
+                  <span className="text-white">MACHINE LEARNING</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-pink-500 rounded-full"></div>
-                  <span className="text-white">FINANCIAL_MODELING</span>
+                  <span className="text-white">FINANCIAL MODELING</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-pink-500 rounded-full"></div>
-                  <span className="text-white">DATA_SCIENCE</span>
+                  <span className="text-white">DATA SCIENCE</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-pink-500 rounded-full"></div>
-                  <span className="text-white">FULL-STACK_DEV</span>
+                  <span className="text-white">FULL STACK DEV</span>
                 </div>
               </div>
             </div>
 
             {/* Non-Technical Skills */}
             <div className="bg-black border-4 border-cyan-500 rounded-lg p-4 font-mono">
-              <h3 className="text-lg font-bold text-cyan-500 mb-2">PROFESSIONAL_SKILLS</h3>
+              <h3 className="text-lg font-bold text-cyan-500 mb-2">PROFESSIONAL SKILLS</h3>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-cyan-500 rounded-full"></div>
@@ -445,15 +634,15 @@ export default function Home() {
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-cyan-500 rounded-full"></div>
-                  <span className="text-white">TEAM_MANAGEMENT</span>
+                  <span className="text-white">TEAM MANAGEMENT</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-cyan-500 rounded-full"></div>
-                  <span className="text-white">PUBLIC_SPEAKING</span>
+                  <span className="text-white">PUBLIC SPEAKING</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-cyan-500 rounded-full"></div>
-                  <span className="text-white">EVENT_COORDINATION</span>
+                  <span className="text-white">LOGISTICAL PLANNING</span>
                 </div>
               </div>
             </div>
@@ -473,6 +662,25 @@ export default function Home() {
       </section>
 
       {/* CSS Animations */}
+      {/* Back to Top Button */}
+      <button
+        onClick={scrollToTop}
+        className={`fixed bottom-8 right-8 z-50 bg-gradient-to-r from-cyan-500 to-purple-500 text-white p-4 rounded-full shadow-2xl hover:shadow-cyan-500/50 transition-all duration-300 hover:scale-110 border-2 border-white ${
+          showBackToTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
+        }`}
+        aria-label="Back to top"
+      >
+        <svg 
+          className="w-6 h-6" 
+          fill="none" 
+          stroke="currentColor" 
+          viewBox="0 0 24 24"
+          strokeWidth={3}
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+      </button>
+
       <style jsx>{`
         @keyframes float-1 {
           0%, 100% { transform: translateY(0px) rotate(0deg); }

@@ -17,7 +17,7 @@ export default function Contact() {
       <div className="max-w-4xl w-full">
         <div className="text-center mb-8 md:mb-12">
           <h2 className="text-2xl md:text-6xl font-bold text-white mb-4 font-mono" style={{textShadow: '0 0 15px rgba(34, 211, 238, 0.5)'}}>
-            LET'S_CONNECT
+            LET'S CONNECT
           </h2>
           <p className="text-base md:text-xl text-white/80">
             I'm always open to new opportunities, collaborations, and conversations. 
@@ -72,7 +72,7 @@ export default function Contact() {
               </div>
               <div>
                 <h3 className="text-base md:text-lg font-bold text-purple-500 mb-1 font-mono">LINKEDIN</h3>
-                <p className="text-white font-mono">CONNECT_WITH_ME</p>
+                <p className="text-white font-mono">CONNECT WITH ME!</p>
               </div>
             </div>
           </a>
@@ -92,7 +92,7 @@ export default function Contact() {
               </div>
               <div>
                 <h3 className="text-base md:text-lg font-bold text-pink-500 mb-1 font-mono">GITHUB</h3>
-                <p className="text-white font-mono">CHECK_MY_CODE</p>
+                <p className="text-white font-mono">CHECK OUT MY CODE!</p>
               </div>
             </div>
           </a>
@@ -111,7 +111,7 @@ export default function Contact() {
               </div>
               <div>
                 <h3 className="text-base md:text-lg font-bold text-cyan-500 mb-1 font-mono">RESUME</h3>
-                <p className="text-white font-mono">DOWNLOAD_PDF</p>
+                <p className="text-white font-mono">DOWNLOAD PDF</p>
               </div>
             </div>
           </a>
