@@ -488,10 +488,7 @@ export default function Home() {
             <div className="bg-black/60 border-3 border-purple-500 rounded-lg max-w-[360px] w-full mx-auto p-4 md:p-4 hover:border-purple-300 hover:shadow-xl hover:shadow-purple-500/30 transition-all duration-300">
               <h3 className="text-lg md:text-xl font-bold text-purple-500 mb-2 md:mb-3">GunSmashBros</h3>
               <p className="text-white/80 text-sm md:text-sm mb-2">
-                A 2D PVP, Platformer-style shooting game. With inspiration drawn from the games Super Smash Bros and Gun Mayhem.
-              </p>
-              <p className="text-white/80 text-sm md:text-sm mb-2 md:mb-3">
-                Driven by Java Socket connections for real-time, multi device gameplay capabilities.
+                A 2D PVP, Platformer-style shooting game. With multi device gamplay and inspiration drawn from Super Smash Bros.
               </p>
               <div className="mt-2 md:mt-3">
                 <div className="flex flex-wrap gap-2 mb-2 md:mb-3">
