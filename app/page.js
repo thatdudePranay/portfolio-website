@@ -213,7 +213,7 @@ export default function Home() {
             </h1>
             
             <div className="flex items-center justify-center md:justify-start gap-2 md:gap-3 mb-3 md:mb-6">
-              <div className="h-px w-8 md:w-16 bg-gradient-to-r from-cyan-500 to-transparent"></div>
+              <div className="hidden md:block h-px w-8 md:w-16 bg-gradient-to-r from-cyan-500 to-transparent"></div>
               <p className="text-xs md:text-xl text-white-300 font-semibold">
                 COMPUTER SCIENCE × FINANCE @ UWATERLOO
               </p>
@@ -315,16 +315,16 @@ export default function Home() {
       </section>
 
 {/* Projects Section - PURPLE RETRO BACKGROUND VISIBLE - WITH INTERNAL SCROLLING */}
-      <section id="projects" className="md:sticky md:top-0 bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 min-h-screen flex flex-col" style={{zIndex: 30}} >
-        {/* Header - Fixed at top */}
-        <div className="pt-12 md:pt-16 px-4 flex-shrink-0">
+      <section id="projects" className="relative py-12 md:py-0 md:sticky md:top-0 bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 md:min-h-screen md:flex md:flex-col" style={{zIndex: 30}} >
+        {/* Header */}
+        <div className="md:pt-16 px-4 md:flex-shrink-0">
           <h2 className="text-2xl md:text-5xl font-bold text-white mb-4 md:mb-6 text-center" style={{textShadow: '0 0 15px rgba(34, 211, 238, 0.3)'}}>
             PROJECTS
           </h2>
         </div>
 
         {/* Scrollable content area - internal scroll on mobile, sticky on desktop */}
-        <div className="flex-1 px-4 pb-12 md:pb-20">
+        <div className="px-4 pb-12 md:pb-20 md:flex-1">
           <div className="w-full mx-auto" style={{maxWidth: '1200px'}}>
             
             {/* MOBILE: Accordion View */}
