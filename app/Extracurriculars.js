@@ -140,16 +140,16 @@ export default function Extracurriculars() {
   };
 
   return (
-    <section className="min-h-screen relative md:sticky top-0 bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950" style={{zIndex: 50}}>
+    <section id="experiences" className="relative sticky top-0 bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 min-h-screen" style={{zIndex: 50}}>
       {/* Header */}
-      <div className="sticky top-0 z-20 bg-black/60 backdrop-blur-lg border-b-2 border-cyan-500/30 py-6">
-        <div className="max-w-6xl mx-auto px-8">
-          <h2 className="text-4xl font-bold text-white text-center mb-4 font-mono" style={{textShadow: '0 0 10px rgba(34, 211, 238, 0.5)'}}>
-            EXTRACURRICULARS_&_LEADERSHIP
+      <div className="sticky top-0 z-20 bg-black/60 backdrop-blur-lg border-b-2 border-cyan-500/30 py-4 md:py-6">
+        <div className="max-w-6xl mx-auto px-4 md:px-8">
+          <h2 className="text-xl md:text-4xl font-bold text-white text-center mb-3 md:mb-4 font-mono leading-tight" style={{textShadow: '0 0 10px rgba(34, 211, 238, 0.5)'}}>
+            EXTRACURRICULARS & LEADERSHIP
           </h2>
           
           {/* Blurb */}
-          <p className="text-center text-white/80 text-lg max-w-4xl mx-auto mb-6 leading-relaxed">
+          <p className="text-center text-white/80 text-sm md:text-lg max-w-4xl mx-auto mb-4 md:mb-6 leading-relaxed">
             Feel free to scroll through a timeline of my efforts, from executing top financial projects as a quant analyst, 
             to coordinating external affairs with companies like <span className="text-cyan-500 font-bold">GOOGLE</span> and <span className="text-cyan-500 font-bold">TESLA</span>, 
             and even raising <span className="text-cyan-500 font-bold">$45,000</span> for the SickKids Foundation. 
@@ -176,7 +176,7 @@ export default function Extracurriculars() {
 
       {/* Timeline Container */}
       <div ref={containerRef} className="relative py-20">
-        <div className="max-w-6xl mx-auto px-8">
+        <div className="max-w-6xl mx-auto px-4 md:px-8">
           <div className="relative">
             {/* Vertical Timeline Line */}
             <div className="absolute left-12 top-0 bottom-0 w-1 bg-gradient-to-b from-cyan-500 via-purple-400 via-pink-400 to-cyan-400 opacity-30 rounded-full"></div>
@@ -266,18 +266,18 @@ export default function Extracurriculars() {
 
                         <div
                           className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                            isOpen && isFocused ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
+                            isOpen && isFocused ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0'
                           }`}
                         >
-                          <div className="px-8 pb-8 border-t-2 border-slate-700 pt-6">
-                            <div className="space-y-4">
+                          <div className="px-4 pb-4 md:px-8 md:pb-8 border-t-2 border-slate-700 pt-4 md:pt-6">
+                            <div className="space-y-2 md:space-y-4">
                               {item.accomplishments.map((accomplishment, i) => (
                                 <div 
                                   key={i} 
-                                  className="flex items-start gap-4 group/item"
+                                  className="flex items-start gap-2 md:gap-4 group/item"
                                 >
                                   <div className={`w-2 h-2 ${colors.bg} rounded-full mt-2 group-hover/item:scale-150 transition-transform`}></div>
-                                  <p className="text-gray-300 text-lg group-hover/item:text-white group-hover/item:translate-x-1 transition-all">
+                                  <p className="text-gray-300 text-sm md:text-lg group-hover/item:text-white group-hover/item:translate-x-1 transition-all">
                                     {accomplishment}
                                   </p>
                                 </div>

@@ -28,33 +28,25 @@ export default function Home() {
         
         {/* Dark Tint Overlay */}
         <div className="absolute inset-0 bg-black/20"></div>
-        
-        {/* Scan line effect*/}
-        <div className="absolute inset-0 pointer-events-none opacity-20">
-          <div className="h-full w-full" style={{
-            backgroundImage: 'repeating-linear-gradient(0deg, #0ff 0px, transparent 2px, transparent 4px)',
-            animation: 'scan 8s linear infinite'
-          }}></div>
-        </div>
       </div>
 
       {/* Top Nav */}
       <nav className="fixed top-0 left-0 right-0 bg-black/40 backdrop-blur-xl z-50 border-b-2 border-cyan-500/30">
-        <div className="max-w-9xl mx-auto px-4 md:px-16 py-3 md:py-6 flex items-center justify-between">
+        <div className="max-w-9xl mx-auto px-2 md:px-16 py-2 md:py-6 flex items-center justify-between">
           <div className="flex items-center gap-2 md:gap-4">
             <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-cyan-500 to-purple-500 rounded border-2 border-cyan-300 flex items-center justify-center shadow-lg shadow-cyan-500/30">
               <span className="text-white font-bold text-base md:text-xl">PS</span>
             </div>
-            <span className="text-white font-bold tracking-wider text-xs md:text-lg" style={{textShadow: '0 0 10px rgba(34, 211, 238, 0.5)'}}>
+            <span className="hidden md:block text-white font-bold tracking-wider text-lg" style={{textShadow: '0 0 10px rgba(34, 211, 238, 0.5)'}}>
               Hi there! Welcome to my personal portfolio!
             </span>
           </div>
           
           {/* Social Icons */}
-          <div className="flex items-center gap-3 md:gap-4">
-            <p className="text-sm md:text-smtext-white-300 font-semibold">
-                Quick Links and Resume Download:
-              </p>
+          <div className="flex items-center gap-2 md:gap-4">
+            <p className="hidden md:block text-sm text-white/80 font-semibold mr-2">
+              Quick Links:
+            </p>
             {/* LinkedIn */}
             <a 
               href="https://linkedin.com/in/pranay-subramanian-1a0126305"
@@ -83,7 +75,7 @@ export default function Home() {
             
             {/* Resume Download */}
             <a 
-              href="/PranaySubramanian1_Resume.pdf"
+              href="/Pranay_SubramanianResume2026.pdf"
               download
               className="w-9 h-9 md:w-10 md:h-10 bg-pink-500/20 border-2 border-pink-500 rounded flex items-center justify-center hover:bg-pink-500/40 hover:scale-110 transition-all shadow-lg hover:shadow-pink-500/50"
               title="Download Resume"
@@ -96,24 +88,24 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section - PURPLE RETRO BACKGROUND VISIBLE */}
-      <section className="min-h-screen flex items-center px-4 md:px-16 pt-20 md:pt-32 pb-16 md:pb-20 relative md:sticky top-0 bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950" style={{zIndex: 10}}>
+      {/* Home screen section */}
+      <section id="home" className="min-h-[100vh] min-h-screen flex items-center justify-center px-4 md:px-16 pt-16 md:pt-32 pb-12 md:pb-20 relative sticky top-0 bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950" style={{zIndex: 10}}>
         
         {/* Floating Retro Elements - ONLY ON HERO SECTION */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          {/* Original 3 squares */}
-          <div className="absolute top-32 left-20 w-16 h-16 border-4 border-cyan-500/70 rounded-lg animate-float-1 shadow-xl shadow-cyan-500/50"></div>
-          <div className="absolute top-1/3 right-32 w-20 h-20 border-4 border-pink-500/70 rounded-lg animate-float-2 shadow-xl shadow-pink-500/50"></div>
-          <div className="absolute bottom-40 left-1/4 w-14 h-14 border-4 border-purple-500/70 rounded-lg animate-float-3 shadow-xl shadow-purple-500/50"></div>
+        <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
+          {/* Original 3 squares - DIMMER ON MOBILE */}
+          <div className="absolute top-32 left-20 w-16 h-16 border-2 md:border-4 border-cyan-500/20 md:border-cyan-500/70 rounded-lg animate-float-1 shadow-md md:shadow-xl shadow-cyan-500/10 md:shadow-cyan-500/50"></div>
+          <div className="absolute top-1/3 right-32 w-20 h-20 border-2 md:border-4 border-pink-500/20 md:border-pink-500/70 rounded-lg animate-float-2 shadow-md md:shadow-xl shadow-pink-500/10 md:shadow-pink-500/50"></div>
+          <div className="absolute bottom-40 left-1/4 w-14 h-14 border-2 md:border-4 border-purple-500/20 md:border-purple-500/70 rounded-lg animate-float-3 shadow-md md:shadow-xl shadow-purple-500/10 md:shadow-purple-500/50"></div>
           
-          {/* Additional circles for more effect */}
-          <div className="absolute top-1/2 right-1/4 w-16 h-16 border-3 border-cyan-400/60 rounded-full animate-float-1 shadow-lg shadow-cyan-400/40" style={{animationDelay: '1.5s'}}></div>
-          <div className="absolute bottom-1/3 left-1/2 w-18 h-18 border-3 border-pink-400/60 rounded-full animate-float-2 shadow-lg shadow-pink-400/40" style={{animationDelay: '2s'}}></div>
+          {/* Additional circles for more effect - DIMMER ON MOBILE */}
+          <div className="absolute top-1/2 right-1/4 w-16 h-16 border-2 md:border-3 border-cyan-400/15 md:border-cyan-400/60 rounded-full animate-float-1 shadow-sm md:shadow-lg shadow-cyan-400/5 md:shadow-cyan-400/40" style={{animationDelay: '1.5s'}}></div>
+          <div className="absolute bottom-1/3 left-1/2 w-18 h-18 border-2 md:border-3 border-pink-400/15 md:border-pink-400/60 rounded-full animate-float-2 shadow-sm md:shadow-lg shadow-pink-400/5 md:shadow-pink-400/40" style={{animationDelay: '2s'}}></div>
         </div>
 
-        <div className="max-w-7xl mx-auto w-full">
-          <div className="mb-8 md:mb-10">
-            <h1 className="text-5xl md:text-[80px] font-semibold text-white leading-[0.9] mb-6 md:mb-8" style={{
+        <div className="max-w-[1800px] mx-auto w-full text-center md:text-left relative z-10 px-4 md:px-8">
+          <div className="mb-6 md:mb-10">
+            <h1 className="text-4xl md:text-[80px] font-semibold text-white leading-tight md:leading-[0.9] mb-4 md:mb-8" style={{
               textShadow: '0 0 10px rgba(34, 211, 238, 0.3), 2px 2px 0px rgba(236, 72, 153, 0.2)'
             }}>
               PRANAY
@@ -123,38 +115,47 @@ export default function Home() {
               </span>
             </h1>
             
-            <div className="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
-              <div className="h-px w-10 md:w-16 bg-gradient-to-r from-cyan-500 to-transparent"></div>
-              <p className="text-sm md:text-xl text-white-300 font-semibold">
+            <div className="flex items-center justify-center md:justify-start gap-2 md:gap-3 mb-3 md:mb-6">
+              <div className="h-px w-8 md:w-16 bg-gradient-to-r from-cyan-500 to-transparent"></div>
+              <p className="text-xs md:text-xl text-white-300 font-semibold">
                 COMPUTER SCIENCE × FINANCE @ UWATERLOO
               </p>
             </div>
-            <p className="text-base md:text-2xl text-white/80 leading-relaxed max-w-2xl">
+            <p className="text-sm md:text-2xl text-white/80 leading-relaxed max-w-2xl mx-auto md:mx-0">
               scroll pls, next.js was hard
             </p>
           </div>
 
           {/* Navigation Grid - Theme 59 Style */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mt-12 md:mt-32">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-3 md:gap-4 mt-8 md:mt-32">
             {[
-              { label: 'About', num: '01' },
-              { label: 'Projects', num: '02' },
-              { label: 'Experience', num: '03' },
-              { label: 'Contact', num: '04' }
+              { label: 'About', num: '01', target: 'about' },
+              { label: 'Projects', num: '02', target: 'projects' },
+              { label: 'Skills', num: '03', target: 'skills' },
+              { label: 'Experiences', num: '04', target: 'experiences' },
+              { label: 'Contact', num: '05', target: 'contact' }
             ].map((item) => (
-              <button 
+              <a
                 key={item.num}
-                className="group bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 rounded-2xl p-6 transition-all hover:-translate-y-1"
+                href={`#${item.target}`}
+                onClick={(e) => {
+                 e.preventDefault();
+                  document.getElementById(item.target)?.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                  });
+                }}
+                className="group bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 rounded-2xl p-4 md:p-6 transition-all hover:-translate-y-1"
               >
-                <p className="text-white/50 text-sm mb-2">{item.num}</p>
-                <p className="text-white font-bold text-lg">{item.label}</p>
-              </button>
+                <p className="text-white/50 text-xs md:text-sm mb-1 md:mb-2">{item.num}</p>
+                <p className="text-white font-bold text-base md:text-lg">{item.label}</p>
+              </a>
             ))}
+            </div>
           </div>
-        </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+        {/* Scroll Indicator - Hide on mobile */}
+        <div className="hidden md:flex absolute bottom-8 left-1/2 transform -translate-x-1/2">
           <div className="flex flex-col items-center gap-2 text-cyan-500/60">
             <span className="text-xs tracking-wider font-mono">SCROLL</span>
             <div className="w-px h-12 bg-gradient-to-b from-cyan-500/60 to-transparent"></div>
@@ -163,29 +164,61 @@ export default function Home() {
       </section>
 
       {/* About Section - BLACK LAYER */}
-      <section className="min-h-screen flex items-center justify-center px-4 md:px-16 py-16 md:py-20 relative md:sticky top-0 bg-black" style={{zIndex: 20}}>
-        <div className="max-w-4xl">
-          <h2 className="text-3xl md:text-6xl font-bold text-white mb-8" style={{textShadow: '0 0 15px rgba(34, 211, 238, 0.3)'}}>
-            ABOUT_ME
+      <section id="about" className="flex items-center justify-center px-4 md:px-16 py-16 md:py-20 relative sticky top-0 bg-black min-h-screen" style={{zIndex: 20}}>
+        <div className="max-w-6xl w-full">
+          <h2 className="text-2xl md:text-6xl font-bold text-white mb-6 md:mb-12 text-center md:text-left" style={{textShadow: '0 0 15px rgba(34, 211, 238, 0.3)'}}>
+            ABOUT ME!
           </h2>
-          <div className="space-y-4 md:space-y-6 text-sm md:text-lg text-white/80 leading-relaxed">
-            <p className="p-4 md:p-6 bg-black/40 border-2 border-cyan-500/30 rounded-lg backdrop-blur-sm">
-              Hi there! I'm Pranay Subramanian, a passionate CFM student at the University of Waterloo. 
-              I'm currently a First Year, in my 1B term, and have been greatly invested in growing my skillset, knowledge base, and experience
-              in the ever vital fields of SWE, Finance, and Data Science. One of my current fascinations and areas of work has been exploring ML development, and application of ML to create strong, real world financial models!
-            </p>
-            <p className="p-4 md:p-6 bg-black/40 border-2 border-pink-500/30 rounded-lg backdrop-blur-sm">
-              When I'm not analyzing markets, deep into a VS Code window for a project like this, or late night grinding for my next assessment,
-              you can find me playing basketball, watching F1, out in nature hiking, or spending time with friends and family!
-            </p>
+
+          {/* Content container - mobile: columns, desktop: rows */}
+          <div className="flex flex-col md:flex-row gap-6 md:gap-12 items-center md:items-start">
+            
+            {/* Images section - Shows first on mobile, right side on desktop */}
+            <div className="w-3/4 sm:w-2/3 md:w-2/5 mx-auto md:mx-0 flex flex-col gap-4 order-1 md:order-2">
+              
+              {/* Main photo retro border */}
+              <div className="relative group">
+                {/* Glow border */}
+                <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-500"></div>
+                
+                {/* Image container */}
+                <div className="relative bg-black rounded-2xl border-4 border-cyan-500 overflow-hidden shadow-2xl shadow-cyan-500/50 group-hover:border-cyan-300 transition-all duration-300">
+                  <img 
+                    src="/images/niceheadshot.jpg" 
+                    alt="Pranay Subramanian"
+                    className="w-full h-auto max-h-[30vh] md:max-h-none object-cover"
+
+                  />
+                  {/* Retro scan line effect on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+              </div>
+              
+            </div>
+
+            {/* Text Section - Shows second on mobile, left side on desktop */}
+            <div className="w-full md:w-3/5 order-2 md:order-1">
+              <div className="space-y-4 md:space-y-6 text-sm md:text-xl text-white/80 leading-relaxed font-sans">
+                <p className="p-4 md:p-6 bg-black/40 border-2 border-cyan-500/30 rounded-lg backdrop-blur-sm">
+                  Hi there! I'm Pranay Subramanian, a passionate CFM student at the University of Waterloo. 
+                  I'm currently a First Year, in my 1B term, and have been greatly invested in growing my skillset, knowledge base, and experience
+                  in the ever vital fields of SWE, Finance, and Data Science. One of my current fascinations and areas of work has been exploring ML development, and application of ML to create strong, real world financial models!
+                </p>
+                <p className="p-4 md:p-6 bg-black/40 border-2 border-pink-500/30 rounded-lg backdrop-blur-sm">
+                  When I'm not analyzing markets, deep into a VS Code window for a project like this, or late night grinding for my next assessment,
+                  you can find me playing basketball, watching F1, out in nature hiking, or spending time with friends and family!
+                </p>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
 
 {/* Projects Section - PURPLE RETRO BACKGROUND VISIBLE */}
-      <section className="flex items-start justify-center px-4 pt-24 md:pt-32 pb-16 md:pb-20 md:sticky top-0 bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950" style={{zIndex: 30, minHeight: '150vh'}}>
+      <section id="projects"className="flex items-start justify-center px-4 py-12 md:pt-32 md:pb-20 relative md:sticky top-0 bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 md:min-h-screen" style={{zIndex: 30}}>
         <div className="w-full" style={{maxWidth: '1600px'}}>
-          <h2 className="text-3xl md:text-6xl font-bold text-white mb-8 md:mb-12 text-center" style={{textShadow: '0 0 15px rgba(34, 211, 238, 0.3)'}}>
+          <h2 className="text-2xl md:text-6xl font-bold text-white mb-6 md:mb-12 text-center" style={{textShadow: '0 0 15px rgba(34, 211, 238, 0.3)'}}>
             PROJECTS
           </h2>
           
@@ -213,7 +246,7 @@ export default function Home() {
             {/* Project Card 2 */}
             <div className="bg-black/60 border-3 border-purple-500 rounded-lg p-5 md:p-8 hover:border-purple-300 hover:shadow-xl hover:shadow-purple-500/30 transition-all duration-300">
               <h3 className="text-xl md:text-2xl font-bold text-purple-500 mb-3">ALPHA-BL Portfolio Optimizer</h3>
-              <p className="text-white/80 mb-2">
+              <p className="text-white/80 text-sm md:text-base mb-2">
                 A portfolio creation and optimization model, designed to maximize returns against a benchmark average of the S&P 500 and TSX.
               </p>
               <p className="text-white/80 text-sm md:text-base mb-3">
@@ -234,7 +267,7 @@ export default function Home() {
             {/* Project Card 3 */}
             <div className="bg-black/60 border-3 border-pink-500 rounded-lg p-5 md:p-8 hover:border-pink-300 hover:shadow-xl hover:shadow-pink-500/30 transition-all duration-300">
               <h3 className="text-xl md:text-2xl font-bold text-pink-500 mb-3">LoanOracle</h3>
-              <p className="text-white/80 mb-2">
+              <p className="text-white/80 text-sm md:text-base mb-2">
                 An XGBoost powered machine learning model designed to predict loan default risk
                 based on a borrower's financial data/profile. 
               </p>
@@ -256,7 +289,7 @@ export default function Home() {
             {/* Project Card 4 */}
             <div className="bg-black/60 border-3 border-cyan-500 rounded-lg p-5 md:p-8 hover:border-cyan-300 hover:shadow-xl hover:shadow-cyan-500/30 transition-all duration-300">
               <h3 className="text-xl md:text-2xl font-bold text-cyan-500 mb-3">EmotionLensAI</h3>
-              <p className="text-white/80 mb-2">
+              <p className="text-white/80 text-sm md:text-base mb-2">
                 A Tensorflow powered AI model designed to differentiate/classify 7 different human emotions.
                 trained on the FER-2013 dataset with over 35,000+ labeled images.
               </p>
@@ -278,7 +311,7 @@ export default function Home() {
             {/* Project Card 5 */}
             <div className="bg-black/60 border-3 border-purple-500 rounded-lg p-5 md:p-8 hover:border-purple-300 hover:shadow-xl hover:shadow-purple-500/30 transition-all duration-300">
               <h3 className="text-xl md:text-2xl font-bold text-purple-500 mb-3">GunSmashBros</h3>
-              <p className="text-white/80 mb-2">
+              <p className="text-white/80 text-sm md:text-base mb-2">
                 A 2D PVP, Platformer-style shooting game. With inspiration drawn from the games Super Smash Bros and Gun Mayhem, real physics, map designs, gun types and more!
               </p>
               <p className="text-white/80 text-sm md:text-base mb-3">
@@ -321,9 +354,9 @@ export default function Home() {
       </section>
 
       {/* Skills Section - BLACK LAYER */}
-      <section className="min-h-screen flex items-center justify-center px-4 md:px-16 py-16 md:py-20 relative md:sticky top-0 bg-black" style={{zIndex: 40}}>
+      <section id="skills" className="flex items-center justify-center px-4 md:px-16 py-16 md:py-20 relative sticky top-0 bg-black min-h-screen" style={{zIndex: 40}}>
         <div className="max-w-6xl w-full">
-          <h2 className="text-3xl md:text-6xl font-bold text-white mb-12 text-center" style={{textShadow: '0 0 15px rgba(34, 211, 238, 0.3)'}}>
+          <h2 className="text-2xl md:text-6xl font-bold text-white mb-8 md:mb-12 text-center" style={{textShadow: '0 0 15px rgba(34, 211, 238, 0.3)'}}>
             TECHNICAL_SKILLS
           </h2>
           
@@ -441,10 +474,6 @@ export default function Home() {
 
       {/* CSS Animations */}
       <style jsx>{`
-        @keyframes scan {
-          0% { transform: translateY(-100%); }
-          100% { transform: translateY(100%); }
-        }
         @keyframes float-1 {
           0%, 100% { transform: translateY(0px) rotate(0deg); }
           50% { transform: translateY(-30px) rotate(45deg); }

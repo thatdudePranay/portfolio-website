@@ -13,10 +13,10 @@ export default function Contact() {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center px-4 py-16 md:py-20 relative md:sticky top-0 bg-black" style={{zIndex: 60}}>
+    <section id="contact" className="flex items-center justify-center px-4 py-16 md:py-20 relative sticky top-0 bg-black min-h-screen" style={{zIndex: 60}}>
       <div className="max-w-4xl w-full">
         <div className="text-center mb-8 md:mb-12">
-          <h2 className="text-3xl md:text-6xl font-bold text-white mb-4 font-mono" style={{textShadow: '0 0 15px rgba(34, 211, 238, 0.5)'}}>
+          <h2 className="text-2xl md:text-6xl font-bold text-white mb-4 font-mono" style={{textShadow: '0 0 15px rgba(34, 211, 238, 0.5)'}}>
             LET'S_CONNECT
           </h2>
           <p className="text-base md:text-xl text-white/80">
@@ -99,7 +99,7 @@ export default function Contact() {
 
           {/* Resume Download Card */}
           <a 
-            href="/PranaySubramanian1_Resume.pdf"
+            href="/Pranay_SubramanianResume2026.pdf"
             download
             className="bg-black/80 rounded-xl p-4 md:p-6 border-3 md:border-4 border-cyan-500 hover:border-cyan-300 hover:shadow-xl hover:shadow-cyan-500/30 transition-all duration-300 group"
           >
