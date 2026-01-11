@@ -480,7 +480,7 @@ export default function Home() {
                 <div className="flex flex-wrap gap-2 mb-2 md:mb-3">
                   <span className="px-4 py-2 bg-cyan-500/20 border border-cyan-500 text-cyan-300 rounded text-sm font-mono">Python</span>
                   <span className="px-4 py-2 bg-cyan-500/20 border border-cyan-500 text-cyan-300 rounded text-sm font-mono">Tensorflow</span>
-                  <span className="px-4 py-2 bg-cyan-500/20 border border-cyan-500 text-cyan-300 rounded text-sm font-mono">matplotlib</span>
+                  <span className="px-4 py-2 bg-cyan-500/20 border border-cyan-500 text-cyan-300 rounded text-sm font-mono">Numpy</span>
                 </div>
                 <a 
                   href="https://github.com/thatdudePranay/EmotionLensAI" 
