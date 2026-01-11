@@ -60,16 +60,16 @@ The timeline features:
 The **Technical Skills** section organizes competencies into clear categories:
 
 **Languages**
-* Python, Java, JavaScript, C/C++, Racket, SQL, R, Bash
+* Python, Java, JavaScript, C
 
 **Frameworks & Libraries**
-* React, Next.js, Node.js, Express, NumPy, Pandas, TensorFlow, XGBoost, scikit-learn
+* React, Next.js, Node.js, NumPy, Pandas, TensorFlow, XGBoost, scikit-learn, Scipy, skLearn
 
 **Tools & Platforms**
-* Git, Docker, AWS, Linux, Vercel, VS Code, Jupyter
+* Git, Linux, Vercel, VS Code, Jupyter, Anaconda
 
 **Finance & Quantitative**
-* Bloomberg Terminal, Financial Modeling, Risk Management, Portfolio Optimization
+* Financial Modeling, Risk Management, Portfolio Optimization, Quantitative Analysis
 
 The layout adapts seamlessly between desktop and mobile views with consistent styling.
 
