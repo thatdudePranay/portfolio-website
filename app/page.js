@@ -15,7 +15,8 @@ export default function Home() {
       color: 'cyan',
       description: 'A modern, responsive portfolio built with Next.js and Tailwind CSS. Features smooth animations and a clean design.',
       tech: ['Next.js', 'React', 'Tailwind'],
-      link: 'https://github.com/thatdudePranay/portfolio-website'
+      link: 'https://github.com/thatdudePranay/portfolio-website',
+      link2: '#'
     },
     {
       id: 2,
@@ -23,7 +24,8 @@ export default function Home() {
       color: 'purple',
       description: 'A portfolio creation/optimization model, designed to maximize returns against the market. Core tools: Alpha, Beta, Sortino and Sharpe Ratios, and the Black-Litterman Optimization technique.',
       tech: ['Python', 'yfinance', 'Pandas'],
-      link: 'https://github.com/aadya-khanna/ALPHA-BL'
+      link: 'https://github.com/aadya-khanna/ALPHA-BL',
+      link2: '#'
     },
     {
       id: 3,
@@ -31,23 +33,26 @@ export default function Home() {
       color: 'pink',
       description: 'A machine learning model designed to predict loan default risk. Trained on 45,000+ data points; 0.52 Gini Score, 0.70 Avg F1 Score, and much more!',
       tech: ['Python', 'XGBoost', 'Streamlit'],
-      link: 'https://github.com/neilhaoyuan/credit_risk_loaner'
+      link: 'https://github.com/neilhaoyuan/credit_risk_loaner',
+      link2: 'https://loanoracle.streamlit.app/'
     },
     {
       id: 4,
       title: 'EmotionLensAI',
       color: 'cyan',
       description: 'A Tensorflow powered AI model designed to differentiate/classify 7 different human emotions, with a structured CNN and data augmentation.',
-      tech: ['Python', 'Tensorflow', 'matplotlib'],
-      link: 'https://github.com/thatdudePranay/EmotionLensAI'
+      tech: ['Python', 'Tensorflow', 'Numpy'],
+      link: 'https://github.com/thatdudePranay/EmotionLensAI',
+      link2:'#'
     },
     {
       id: 5,
       title: 'GunSmashBros',
       color: 'purple',
       description: 'A 2D PVP, Platformer-style shooting game. With multi device gamplay and inspiration drawn from Super Smash Bros.',
-      tech: ['Java', 'Sockets'],
-      link: 'https://github.com/tTong32/Gun-Smash-Bros'
+      tech: ['Java','OOP', 'Sockets'],
+      link: 'https://github.com/tTong32/Gun-Smash-Bros',
+      link2:'#'
     },
     {
       id: 6,
@@ -55,7 +60,8 @@ export default function Home() {
       color: 'pink',
       description: 'Stay tuned for any future progress, updates, or new projects that I may be working on! Loading...',
       tech: ['...', '...', '...'],
-      link: '#'
+      link: '#',
+      link2: '#'
     }
   ];
 
@@ -314,7 +320,7 @@ export default function Home() {
         </div>
       </section>
 
-{/* Projects Section - PURPLE RETRO BACKGROUND VISIBLE - WITH INTERNAL SCROLLING */}
+{/* Projects Section - PURPLE RETRO BACKGROUND VISIBLE*/}
       <section id="projects" className="relative py-12 md:py-0 md:sticky md:top-0 bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 md:min-h-screen md:flex md:flex-col" style={{zIndex: 30}} >
         {/* Header */}
         <div className="md:pt-16 px-4 md:flex-shrink-0">
@@ -323,7 +329,7 @@ export default function Home() {
           </h2>
         </div>
 
-        {/* Scrollable content area - internal scroll on mobile, sticky on desktop */}
+        {/* accordian on movile sticky on desktop */}
         <div className="px-4 pb-12 md:pb-20 md:flex-1">
           <div className="w-full mx-auto" style={{maxWidth: '1200px'}}>
             
@@ -368,6 +374,18 @@ export default function Home() {
                             [VIEW_PROJECT] →
                           </a>
                         )}
+                        <div></div>
+                        {project.link2 !== '#' && (
+                          <a
+                          href={project.link2}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`inline-block ${colors.text} hover:opacity-70 transition-opacity font-bold`}
+                        >
+                          [OPEN_APP] →
+                        </a>
+                        )
+                        }
                         {project.link === '#' && (
                           <span className={`inline-block ${colors.text} opacity-50 font-bold cursor-not-allowed`}>
                             [COMING_SOON] →
