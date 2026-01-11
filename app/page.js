@@ -455,16 +455,15 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className = "text-pink-500 hover:text-pink-300 transition-colors font-bold"
                 >
-                  [OPEN_APP] →
+                  [OPEN_APP] -
                 </a>
-                <div> </div>
                 <a 
                   href="https://github.com/neilhaoyuan/credit_risk_loaner" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-pink-500 hover:text-pink-300 transition-colors font-bold"
                 >
-                   [VIEW_PROJECT] →
+                   - [VIEW_PROJECT] →
                 </a>
               </div>
             </div>
