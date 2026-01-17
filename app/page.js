@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Extracurriculars from './Extracurriculars';
 import Contact from './Contact';
+import { Analytics } from "@vercel/analytics/next"
 
 export default function Home() {
   const [expandedProject, setExpandedProject] = useState(null);
