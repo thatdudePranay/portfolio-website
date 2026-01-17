@@ -221,7 +221,7 @@ export default function Home() {
             
             <div className="flex items-center justify-center md:justify-start gap-2 md:gap-3 mb-3 md:mb-6">
               <div className="hidden md:block h-px w-8 md:w-16 bg-gradient-to-r from-cyan-500 to-transparent"></div>
-              <p className="text-xs md:text-xl text-white-300 font-semibold">
+              <p className="text-xs md:text-xl text-white font-semibold">
                 COMPUTER SCIENCE × FINANCE @ UWATERLOO
               </p>
             </div>
