@@ -178,7 +178,7 @@ export default function Home() {
             
             {/* Resume Download */}
             <a 
-              href="/PranaySubramanian_resume2026.pdf"
+              href="/PranaySubramanian_Resume_Jan2026"
               download
               className="w-9 h-9 md:w-10 md:h-10 bg-pink-500/20 border-2 border-pink-500 rounded flex items-center justify-center hover:bg-pink-500/40 hover:scale-110 transition-all shadow-lg hover:shadow-pink-500/50"
               title="Download Resume"

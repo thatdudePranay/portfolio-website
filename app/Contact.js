@@ -99,7 +99,7 @@ export default function Contact() {
 
           {/* Resume Download Card */}
           <a 
-            href="/PranaySubramanian_resume2026.pdf"
+            href="/PranaySubramanian_Resume_Jan2026"
             download
             className="bg-black/80 rounded-xl p-4 md:p-6 border-3 md:border-4 border-cyan-500 hover:border-cyan-300 hover:shadow-xl hover:shadow-cyan-500/30 transition-all duration-300 group"
           >
