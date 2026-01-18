@@ -82,7 +82,7 @@ export default function Extracurriculars() {
     },
   ];
 
-  // Detect which item is in focus based on scroll
+  // Detecting which item is in focus based on scroll
   useEffect(() => {
     const handleScroll = () => {
       const containerCenter = window.innerHeight / 2;
