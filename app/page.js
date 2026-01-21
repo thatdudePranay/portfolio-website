@@ -308,7 +308,7 @@ export default function Home() {
                 <p className="p-4 md:p-6 bg-black/40 border-2 border-cyan-500/30 rounded-lg backdrop-blur-sm">
                   Hi there! I'm Pranay Subramanian, a passionate CFM student at the University of Waterloo. 
                   I'm currently a First Year, in my 1B term, and have been greatly invested in growing my skillset, knowledge base, and experience
-                  in the ever vital fields of SWE, Finance, and Data Science. One of my current fascinations and areas of work has been exploring ML development, and application of ML to create strong, real world financial models!
+                  in the ever vital fields of SWE, Finance, and Data Science. One of my current fascinations and areas of work has been exploring ML development, and the application of ML to create strong, real world financial models!
                 </p>
                 <p className="p-4 md:p-6 bg-black/40 border-2 border-pink-500/30 rounded-lg backdrop-blur-sm">
                   When I'm not analyzing markets, deep into a VS Code window for a project like this, or late night grinding for my next assessment,
