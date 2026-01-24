@@ -20,7 +20,7 @@ export default function Extracurriculars() {
         "Analyzed precious metals spreads against consumer inflation expectations using Python (yfinance, FRED API) to identify trading signals with 11.8% copper outperformance",
         "Conducted SABR Volatility Model research, exploring volatility surface concepts effects on options",
         "Implemented a functioning, calibrated SABR model, to make accurate option volatility readings, and valuations",
-        "Will be working on reverse engineering MVO portfolio optimization methods, to analyze functionality, reasoning, etc",
+        "Reverse engineered MVO and Black-Litterman portfolio optimization methods, to analyze functionality, reasoning, etc",
         "Progress ongoing..."
       ]
     },
