@@ -226,7 +226,7 @@ export default function Home() {
               </p>
             </div>
             <p className="text-sm md:text-2xl text-white/80 leading-relaxed max-w-2xl mx-auto md:mx-0">
-              scroll pls, next.js was hard
+              Feel free to explore this portfolio to learn more about me!
             </p>
           </div>
 
